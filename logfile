@@ -1,4 +1,0 @@
-Obtaining bentkus_conf_seq from git+ssh://****@github.com/WannabeSmith/bentkus_conf_seq.git@88f5820f27d6a286a7e9b6a98e444e450b363cd9#egg=bentkus_conf_seq (from -r requirements.txt (line 5))
-  Skipping because already up-to-date.
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status 'error'

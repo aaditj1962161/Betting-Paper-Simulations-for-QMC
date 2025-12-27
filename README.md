@@ -1,29 +1,24 @@
-# Generating plots for 'Estimating means of bounded random variables by betting'
+## Simulations for the paper "Empirical Bernstein and betting confidence intervals for randomized quasi-Monte Carlo"
 
-This repository contains the code for reproducing the plots in 'Estimating means of bounded random variables by betting'.
+To run the simulations, we recommend the following steps
 
-### Install dependencies
-First, install the required dependencies.
+First, to set up the environment, run the following commands 
 
-```zsh
-# Install the required python packages
-pip install -r requirements.txt
+```bash
+mkdir betsim 
+cd betsim/
+conda env create --name betci python=3.12
+conda activate betci
+git clone git@github.com:aaditj1962161/Betting-Paper-Simulations-for-QMC.git 
+pip install "numpy<2" scipy qmcpy matplotlib seaborn jupyterlab
+git clone git@github.com:gostevehoward/confseq.git
+pip install -e ./confseq/
+cd Betting-Paper-Simulations-for-QMC/
 ```
 
-### Generate plots 
+Then, to run simulations and generate `qmc_combined_results.csv` run the Jupyter notebook `Betting IID vs QMC.ipynb`.
 
-Finally, run the shell script `generate_plots.sh`. **Note: this could take quite a while**.
-```zsh
-# Replace zsh with your preferred shell (e.g. zsh, bash, etc.)
-zsh generate_plots.sh
-```
+Then, in an R session, source `makefigs.R`. This should output `Table1.txt`, `Table2.txt`, and `Table3.txt` as well as `figmeanwidths.pdf` and `figwidthstoeb.pdf`. 
 
-Alternatively, you can enter each directory individually and run the relevant simulations:
 
-```zsh
-# Enter the desired simulations directory
-cd simulations/CM-EB_vs_PM-EB
-# Run the python script. This will create figures in `simulations/CM-EB_vs_PM-EB/figures/`.
-python simulations.py
-```
 
