@@ -7,18 +7,19 @@ First, to set up the environment, run the following commands
 ```bash
 mkdir betsim 
 cd betsim/
-conda env create --name betci python=3.12
+conda create --name betci python=3.12
 conda activate betci
 git clone git@github.com:aaditj1962161/Betting-Paper-Simulations-for-QMC.git 
-pip install "numpy<2" scipy qmcpy matplotlib seaborn jupyterlab
+pip install "numpy<2" scipy qmcpy jupyterlab
 git clone git@github.com:gostevehoward/confseq.git
 pip install -e ./confseq/
-cd Betting-Paper-Simulations-for-QMC/
 ```
 
-Then, to run simulations and generate `qmc_combined_results.csv` run the Jupyter notebook `Betting IID vs QMC.ipynb`.
+Then, ensuring you are in the `betci` conda environment, run the Jupyter notebook simulations in `Betting IID vs QMC.ipynb` to generate `qmc_combined_results.csv`. 
 
-Then, in an R session, source `makefigs.R`. This should output `Table1.txt`, `Table2.txt`, and `Table3.txt` as well as `figmeanwidths.pdf` and `figwidthstoeb.pdf`. 
+Then, run the R script to generate outputs from the CSV file using 
 
-
-
+```bash 
+Rscript makefigs.R
+```
+This should output `Table1.txt`, `Table2.txt`, and `Table3.txt` as well as `figmeanwidths.pdf` and `figwidthstoeb.pdf`. 
