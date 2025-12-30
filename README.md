@@ -10,7 +10,7 @@ cd betsim/
 conda create --name betci python=3.8.19
 conda activate betci
 git clone git@github.com:aaditj1962161/Betting-Paper-Simulations-for-QMC.git 
-pip install "numpy<2" scipy qmcpy jupyterlab
+pip install numpy=1.24.4 scipy=1.10.1 qmcpy=1.6.2 jupyter
 git clone git@github.com:gostevehoward/confseq.git
 pip install -e ./confseq/
 ```
